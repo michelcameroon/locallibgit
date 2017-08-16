@@ -4,10 +4,7 @@ var Schema = mongoose.Schema;
 
 var GenreSchema = Schema(
   {
-    name: {type: String, required: true, min: 3, max: 100},
-    catergory: {type: String, required: true, max: 100},
-    date_of_birth: {type: Date},
-    date_of_death: {type: Date},
+    name: {type: String, required: true}
   }
 );
 
@@ -17,7 +14,7 @@ var GenreSchema = Schema(
 GenreSchema
 .virtual('url')
 .get(function () {
-  return '/categorie/' + this._id;
+  return '/catalog/genre/' + this._id;
 });
 
 
